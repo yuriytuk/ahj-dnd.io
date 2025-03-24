@@ -8,13 +8,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 40vh;
   margin: 0;
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
 .container {
+  position: absolute;
   max-width: 960px;
   display: inline-flex;
   justify-content: space-between;
