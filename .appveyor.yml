@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 environment:
   nodejs_version: "18"  # Укажите нужную версию Node.js
 
@@ -11,4 +12,19 @@ test_script:
   - npm test
 
 build_script:
+=======
+environment:
+  nodejs_version: "18"  # Укажите нужную версию Node.js
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
+
+build: off
+
+test_script:
+  - npm test
+
+build_script:
+>>>>>>> 1dbda356735fa78a5f4632e8f01a0bbe233cdf6a
   - npm run build
