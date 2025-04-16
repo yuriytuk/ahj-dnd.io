@@ -1,0 +1,5 @@
+version: 1.0.{build}
+environment:
+  token:
+    secure: UuGocukbD9dM5BWalqQg6ALRHbV6uFigodBxd3GBdpvEJqL1Wv8SpCe67xXxPYxR
+  git: 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
