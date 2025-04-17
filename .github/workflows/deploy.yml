@@ -2,14 +2,29 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mv src/* .
-      - run: echo "Your domain" > CNAME
+      
+      # (Опционально) Если нужна сборка (например, для React/Vite)
+      - name: Install and build
+        run: |
+          npm install
+          npm run build  # или другой скрипт, который собирает файлы в `dist/`
+      
+      # Переносим файлы из `src` в корень (если без сборки)
+      - name: Prepare files
+        run: |
+          mv src/* .  # или cp -r src/* ./ (если нужно сохранить исходники)
+          echo "YourDomain.com" > CNAME  # если используется кастомный домен
+      
+      # Загружаем артефакт для GitHub Pages
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: src/
+          path: .  # или `dist/`, если файлы собраны туда
+      
+      # Деплоим
       - uses: actions/deploy-pages@v3
