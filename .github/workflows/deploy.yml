@@ -13,18 +13,18 @@ jobs:
       - name: Install and build
         run: |
           npm install
-          npm run build  # или другой скрипт, который собирает файлы в `dist/`
+          npm run build
       
       # Переносим файлы из `src` в корень (если без сборки)
       - name: Prepare files
         run: |
-          mv src/* .  # или cp -r src/* ./ (если нужно сохранить исходники)
-          echo "YourDomain.com" > CNAME  # если используется кастомный домен
+          mv src/* .
+          echo "YourDomain.com" > CNAME
       
       # Загружаем артефакт для GitHub Pages
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # или `dist/`, если файлы собраны туда
+          path: src/
       
       # Деплоим
       - uses: actions/deploy-pages@v3
