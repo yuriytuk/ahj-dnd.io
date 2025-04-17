@@ -8,13 +8,14 @@ export function addCard(column, text) {
     addedCard.textContent = text;
     addedCard.draggable = true;
 
-    const cardCloseBtn = document.createElement('span');
+    const cardCloseBtn = document.createElement('div');
     cardCloseBtn.classList.add('card-close-btn');
     cardCloseBtn.innerHTML = '×';
 
     cardCloseBtn.addEventListener('click', () => {
         addedCard.classList.add('removing');
         setTimeout(() => {
+            alert(addedCard.textContent);
             addedCard.remove();
             saveCardsToLocalStorage();
         }, 300);

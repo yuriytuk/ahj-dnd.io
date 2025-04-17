@@ -21,7 +21,7 @@ export function replaceStaticButton(staticButton) {
     dynamicButton.classList.add('dynamic-button');
     dynamicButton.textContent = 'Add Card';
 
-    const closeBtn = document.createElement('span');
+    const closeBtn = document.createElement('div');
     closeBtn.classList.add('close-btn');
     closeBtn.innerHTML = '×';
 

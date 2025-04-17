@@ -10,9 +10,6 @@ export function saveCardsToLocalStorage() {
         const cards = column.querySelectorAll('.added-card');
         const columnCards = [];
 
-        /*cards.forEach(card => {
-            columnCards.push(card.textContent.slice(0, -1));
-        });*/
         cards.forEach(card => {
             columnCards.push(card.dataset.text || card.textContent);
         });

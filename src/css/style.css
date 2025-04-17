@@ -30,7 +30,9 @@ body {
 }
 
 .hidden {
-  display: none;
+  /* перетаскивание */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .card:hover {
@@ -141,6 +143,7 @@ h4 {
   border-radius: 5px;
   word-wrap: break-word;
   user-select: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .card-close-btn {
@@ -170,7 +173,6 @@ h4 {
 
 .drag-over {
   /* смещаемый элемент */
-  margin-bottom: 40px;
 }
 
 .added-card[draggable="true"] {
