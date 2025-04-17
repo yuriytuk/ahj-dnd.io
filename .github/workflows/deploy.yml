@@ -11,5 +11,5 @@ jobs:
       - run: echo "Your domain" > CNAME
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: ./src
+          path: src/
       - uses: actions/deploy-pages@v3
